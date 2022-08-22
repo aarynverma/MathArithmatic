@@ -19,7 +19,18 @@
 
         public double divi(double a, double b)
         {
-            return (a / b);
+
+            if (b<=0)
+            {
+              
+                throw new DivideByZeroException();
+                return (a/b); 
+
+            }
+            else
+            {
+                return (a / b);
+            }
         }
     }
     public class Interest: IInterest
