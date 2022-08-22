@@ -14,7 +14,6 @@ namespace MathCalc.Controllers
 
         }
 
-
         [Route("add")]
         [HttpPost]
         public int Addition(int a, int b)
@@ -42,21 +41,27 @@ namespace MathCalc.Controllers
         {
             return _math.divi(a, b);
         }
+    }
+    public class InterestController : ControllerBase
+    {
+        public IInterest _interest;
+        public InterestController(IInterest interest)
+        {
+            _interest = interest;
 
+        }
         [Route("SI")]
         [HttpPost]
         public double SI(double p, double r, double t)
         {
-            return (p * r * t) / 100;
+            return _interest.SI(p, r, t);
         }
 
         [Route("CI")]
         [HttpPost]
         public double CI(double p, double r, double t, double n)
         {
-            return p * (1 + ((r / 4) / 100)) - p;
+            return _interest.CI(p, r, t, n);
         }
-
-
     }
 }

@@ -1,5 +1,7 @@
 using MathCalc.Models;
+using Microsoft.Extensions.DependencyInjection;
 using Math = MathCalc.Models.Math;
+using Interest = MathCalc.Models.Interest;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IMath, Math>();
+builder.Services.AddScoped<IInterest, Interest>();
+
 
 var app = builder.Build();
 

@@ -21,16 +21,17 @@
         {
             return (a / b);
         }
-
+    }
+    public class Interest: IInterest
+    {
         public double SI(double p, double r, double t)
         {
             return (p * r * t) / 100;
         }
 
-        public double CI(double p, double r, double t,double n)
+        public double CI(double p, double r, double t, double n)
         {
-            return p * (1+ ((r/4)/100)) - p;
+            return p * (1 + ((r / 4) / 100)) - p;
         }
-
     }
 }
